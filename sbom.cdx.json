@@ -1,0 +1,103 @@
+{
+ "bomFormat": "CycloneDX",
+ "specVersion": "1.5",
+ "serialNumber": "urn:uuid:4ef20dad-9721-52e5-b820-b93c23e383c4",
+ "version": 1,
+ "metadata": {
+  "timestamp": "2026-10-06T09:18:40Z",
+  "component": {
+   "type": "application",
+   "name": "DEEP_LEARNING_FOR",
+   "version": "83b357604d34",
+   "bom-ref": "pkg:generic/anticloud/DEEP_LEARNING_FOR@83b357604d34",
+   "purl": "pkg:generic/anticloud/DEEP_LEARNING_FOR@83b357604d34",
+   "licenses": [
+    {
+     "license": {
+      "id": "Apache-2.0"
+     }
+    }
+   ]
+  },
+  "properties": [
+   {
+    "name": "anticloud:source-commit",
+    "value": "REMOVED_CONTAMINATED_SHA_PENDING_API_RESOLVE"
+   },
+   {
+    "name": "anticloud:source-url",
+    "value": "https://github.com/the-anticloud/OPENMRS_CORE.git"
+   },
+   {
+    "name": "anticloud:tier",
+    "value": "tier-agent"
+   }
+  ]
+ },
+ "components": [
+  {
+   "type": "library",
+   "name": "absl-py",
+   "version": "unspecified",
+   "purl": "pkg:pypi/absl-py",
+   "bom-ref": "pypi/absl-py@unspecified"
+  },
+  {
+   "type": "library",
+   "name": "numpy",
+   "version": "unspecified",
+   "purl": "pkg:pypi/numpy",
+   "bom-ref": "pypi/numpy@unspecified"
+  },
+  {
+   "type": "library",
+   "name": "rich",
+   "version": "unspecified",
+   "purl": "pkg:pypi/rich",
+   "bom-ref": "pypi/rich@unspecified"
+  },
+  {
+   "type": "library",
+   "name": "namex",
+   "version": "unspecified",
+   "purl": "pkg:pypi/namex",
+   "bom-ref": "pypi/namex@unspecified"
+  },
+  {
+   "type": "library",
+   "name": "h5py",
+   "version": "unspecified",
+   "purl": "pkg:pypi/h5py",
+   "bom-ref": "pypi/h5py@unspecified"
+  },
+  {
+   "type": "library",
+   "name": "optree",
+   "version": "unspecified",
+   "purl": "pkg:pypi/optree",
+   "bom-ref": "pypi/optree@unspecified"
+  },
+  {
+   "type": "library",
+   "name": "ml-dtypes",
+   "version": "unspecified",
+   "purl": "pkg:pypi/ml-dtypes",
+   "bom-ref": "pypi/ml-dtypes@unspecified"
+  },
+  {
+   "type": "library",
+   "name": "packaging",
+   "version": "unspecified",
+   "purl": "pkg:pypi/packaging",
+   "bom-ref": "pypi/packaging@unspecified"
+  }
+ ],
+ "source": {
+  "git": {
+   "head": null,
+   "url": null,
+   "sha_unverified": true,
+   "note": "contamination removed; resolve via GitHub API before quoting"
+  }
+ }
+}

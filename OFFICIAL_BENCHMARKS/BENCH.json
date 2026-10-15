@@ -1,0 +1,801 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "DEEP_LEARNING_FOR",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\BRAIN_COMPUTER_INTERFACE\\DEEP_LEARNING_FOR\\UPSTREAM_CLONE",
+    "git": {
+      "head": "",
+      "url": "https://github.com/the-anticloud/OPENMRS_CORE.git",
+      "branch": "master",
+      "committed_at": "2026-09-29T11:06:59+04:00"
+    }
+  },
+  "metrics": {
+    "files_total": 1016,
+    "source_files_scanned": 975,
+    "lines_of_code": 333733,
+    "languages": {
+      ".py": 994,
+      ".txt": 8,
+      ".md": 5,
+      "(none)": 2,
+      ".sh": 2,
+      ".yaml": 1,
+      ".cff": 1,
+      ".yml": 1,
+      ".toml": 1,
+      ".keras": 1
+    }
+  },
+  "licence": {
+    "spdx": "Apache-2.0",
+    "class": "A",
+    "source_file": "LICENSE",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 8,
+    "unique": 8,
+    "by_ecosystem": {
+      "pypi": 8
+    },
+    "list": [
+      {
+        "ecosystem": "pypi",
+        "name": "absl-py",
+        "version": "",
+        "source_file": "pyproject.toml",
+        "raw": "absl-py"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "numpy",
+        "version": "",
+        "source_file": "pyproject.toml",
+        "raw": "numpy"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "rich",
+        "version": "",
+        "source_file": "pyproject.toml",
+        "raw": "rich"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "namex",
+        "version": "",
+        "source_file": "pyproject.toml",
+        "raw": "namex"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "h5py",
+        "version": "",
+        "source_file": "pyproject.toml",
+        "raw": "h5py"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "optree",
+        "version": "",
+        "source_file": "pyproject.toml",
+        "raw": "optree"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "ml-dtypes",
+        "version": "",
+        "source_file": "pyproject.toml",
+        "raw": "ml-dtypes"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "packaging",
+        "version": "",
+        "source_file": "pyproject.toml",
+        "raw": "packaging"
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 96,
+    "files_with_findings": 91,
+    "severity": {
+      "high": 15,
+      "medium": 11,
+      "low": 70
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 3,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "keras/src/utils/file_utils.py",
+            "line": 449,
+            "cwe": "CWE-327",
+            "snippet": "return hashlib.md5()"
+          },
+          {
+            "severity": "medium",
+            "file": "keras/src/utils/file_utils_test.py",
+            "line": 722,
+            "cwe": "CWE-327",
+            "snippet": "self.assertIsInstance(hasher, type(hashlib.md5()))"
+          },
+          {
+            "severity": "medium",
+            "file": "keras/src/legacy/preprocessing/text.py",
+            "line": 69,
+            "cwe": "CWE-327",
+            "snippet": "return int(hashlib.md5(w.encode()).hexdigest(), 16)"
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 16,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "pip_build.py",
+            "line": 104,
+            "cwe": "CWE-78",
+            "snippet": "os.system(\"python3 -m build\")"
+          },
+          {
+            "severity": "medium",
+            "file": "keras/src/utils/python_utils.py",
+            "line": 83,
+            "cwe": "CWE-502",
+            "snippet": "code = marshal.loads(raw_code)"
+          },
+          {
+            "severity": "high",
+            "file": "keras/src/utils/torch_utils.py",
+            "line": 122,
+            "cwe": "CWE-95",
+            "snippet": "self.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "keras/src/optimizers/optimizer_test.py",
+            "line": 401,
+            "cwe": "CWE-502",
+            "snippet": "reloaded = pickle.loads(pickle.dumps(optimizer))"
+          },
+          {
+            "severity": "high",
+            "file": "keras/src/models/model_test.py",
+            "line": 277,
+            "cwe": "CWE-502",
+            "snippet": "reloaded_pickle = pickle.loads(pickle.dumps(model))"
+          },
+          {
+            "severity": "high",
+            "file": "keras/src/models/sequential_test.py",
+            "line": 364,
+            "cwe": "CWE-502",
+            "snippet": "result = pickle.loads(pickle.dumps(model))"
+          },
+          {
+            "severity": "high",
+            "file": "keras/src/metrics/metric_test.py",
+            "line": 192,
+            "cwe": "CWE-502",
+            "snippet": "reloaded = pickle.loads(pickle.dumps(metric))"
+          },
+          {
+            "severity": "high",
+            "file": "keras/src/losses/loss_test.py",
+            "line": 227,
+            "cwe": "CWE-502",
+            "snippet": "loss = pickle.loads(pickle.dumps(loss))"
+          },
+          {
+            "severity": "high",
+            "file": "keras/src/legacy/backend.py",
+            "line": 841,
+            "cwe": "CWE-95",
+            "snippet": "def eval(x):"
+          },
+          {
+            "severity": "high",
+            "file": "keras/src/layers/layer_test.py",
+            "line": 1486,
+            "cwe": "CWE-502",
+            "snippet": "reloaded = pickle.loads(pickle.dumps(layer))"
+          },
+          {
+            "severity": "high",
+            "file": "keras/src/export/litert.py",
+            "line": 232,
+            "cwe": "CWE-95",
+            "snippet": "# Calling `eval()` silences that warning and ensures any"
+          },
+          {
+            "severity": "high",
+            "file": "keras/src/export/onnx.py",
+            "line": 212,
+            "cwe": "CWE-95",
+            "snippet": "export_model.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "keras/src/export/openvino.py",
+            "line": 128,
+            "cwe": "CWE-95",
+            "snippet": "model.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "keras/src/dtype_policies/dtype_policy_test.py",
+            "line": 202,
+            "cwe": "CWE-502",
+            "snippet": "copied_policy = pickle.load(f)"
+          },
+          {
+            "severity": "high",
+            "file": "keras/src/backend/torch/trainer.py",
+            "line": 396,
+            "cwe": "CWE-95",
+            "snippet": "self.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "integration_tests/import_test.py",
+            "line": 21,
+            "cwe": "CWE-78",
+            "snippet": "subprocess.run(\"rm -rf tmp_build_dir\", shell=True)"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 50,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "keras/__init__.py",
+            "line": 1,
+            "cwe": "CWE-",
+            "snippet": "# This file should NEVER be packaged! This is a hack to make \"import keras\" from"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/wrappers/fixes.py",
+            "line": 15,
+            "cwe": "CWE-",
+            "snippet": "TODO: remove when minimum scikit-learn version is 1.6"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/trainers/trainer_test.py",
+            "line": 527,
+            "cwe": "CWE-",
+            "snippet": "atol=1.0,  # TODO: results vary across backends"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/trainers/data_adapters/grain_dataset_adapter.py",
+            "line": 62,
+            "cwe": "CWE-",
+            "snippet": "# TODO(abheesht17): Remove this after the next Grain release."
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/trainers/data_adapters/py_dataset_adapter_test.py",
+            "line": 224,
+            "cwe": "CWE-",
+            "snippet": "# TODO: test sample weights"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/optimizers/lion_test.py",
+            "line": 100,
+            "cwe": "CWE-",
+            "snippet": "# TODO: test correctness"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/ops/image_test.py",
+            "line": 2081,
+            "cwe": "CWE-",
+            "snippet": "# TODO: `nearest` interpolation in jax and torch causes random index"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/ops/nn_test.py",
+            "line": 3737,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Get expected output from jax if `jax.nn.dot_product_attention`"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/ops/numpy.py",
+            "line": 7298,
+            "cwe": "CWE-",
+            "snippet": "# TODO: torch doesn't support uint32"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/ops/numpy_test.py",
+            "line": 9311,
+            "cwe": "CWE-",
+            "snippet": "# TODO(hongyu): Re-enable uint32 tests once we determine how to handle"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/models/functional.py",
+            "line": 436,
+            "cwe": "CWE-",
+            "snippet": "# Symbolic only. TODO"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/models/functional_test.py",
+            "line": 339,
+            "cwe": "CWE-",
+            "snippet": "# TODO"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/models/model.py",
+            "line": 337,
+            "cwe": "CWE-",
+            "snippet": "- `*_xxxxxx.weights.h5`: The sharded files containing only the"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/models/sequential.py",
+            "line": 198,
+            "cwe": "CWE-",
+            "snippet": "# TODO: consider reverting inbound nodes on layers processed."
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/metrics/__init__.py",
+            "line": 116,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Align with `tf.keras` and set the name attribute of metrics"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/legacy/saving/json_utils.py",
+            "line": 114,
+            "cwe": "CWE-",
+            "snippet": "):  # TODO(nkovela): Add TF SavedModel scope"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/legacy/saving/legacy_h5_format.py",
+            "line": 67,
+            "cwe": "CWE-",
+            "snippet": "# TODO(b/128683857): Add integration tests between tf.keras and"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/legacy/saving/legacy_h5_format_test.py",
+            "line": 15,
+            "cwe": "CWE-",
+            "snippet": "# TODO: more thorough testing. Correctness depends"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/layers/layer.py",
+            "line": 944,
+            "cwe": "CWE-",
+            "snippet": "# TODO: consider extending this to all args and kwargs."
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/layers/layer_test.py",
+            "line": 1694,
+            "cwe": "CWE-",
+            "snippet": "# TODO (haohuanw, fchollet): Needs further discussion on how to"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/layers/preprocessing/feature_space_test.py",
+            "line": 532,
+            "cwe": "CWE-",
+            "snippet": "\"TODO: When using FeatureSpace as a Model in torch and numpy, \""
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/layers/preprocessing/hashing_test.py",
+            "line": 450,
+            "cwe": "CWE-",
+            "snippet": "# TODO: support tf.RaggedTensor."
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/layers/preprocessing/index_lookup.py",
+            "line": 487,
+            "cwe": "CWE-",
+            "snippet": "# TODO(mattdangerw): for better performance we should rewrite this"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/layers/preprocessing/pipeline_test.py",
+            "line": 75,
+            "cwe": "CWE-",
+            "snippet": "reason=\"Fails on CI, passes locally. TODO: debug\","
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/layers/preprocessing/string_lookup_test.py",
+            "line": 18,
+            "cwe": "CWE-",
+            "snippet": "# TODO: increase coverage. Most features aren't being tested."
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 7,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "keras/src/utils/naming.py",
+            "line": 17,
+            "cwe": "CWE-1188",
+            "snippet": "set_to_default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "keras/src/utils/python_utils.py",
+            "line": 10,
+            "cwe": "CWE-1188",
+            "snippet": "method._is_default = True"
+          },
+          {
+            "severity": "medium",
+            "file": "keras/src/backend/tensorflow/ops/core.py",
+            "line": 871,
+            "cwe": "CWE-1188",
+            "snippet": "\"name_scope_stack\", default=[], set_to_default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "keras/src/backend/jax/ops/core.py",
+            "line": 702,
+            "cwe": "CWE-1188",
+            "snippet": "\"name_scope_stack\", default=[], set_to_default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "keras/src/backend/common/name_scope.py",
+            "line": 41,
+            "cwe": "CWE-1188",
+            "snippet": "\"name_scope_stack\", default=[], set_to_default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "keras/src/backend/common/remat.py",
+            "line": 100,
+            "cwe": "CWE-1188",
+            "snippet": "\"remat_scope_stack\", default=[], set_to_default=True"
+          },
+          {
+            "severity": "medium",
+            "file": "keras/src/backend/common/variables.py",
+            "line": 557,
+            "cwe": "CWE-1188",
+            "snippet": "\"uninitialized_variables\", [], set_to_default=True"
+          }
+        ]
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 20,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "keras/src/optimizers/adadelta.py",
+            "line": 37,
+            "cwe": "CWE-319",
+            "snippet": "- [Zeiler, 2012](http://arxiv.org/abs/1212.5701)"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/optimizers/adagrad.py",
+            "line": 32,
+            "cwe": "CWE-319",
+            "snippet": "http://www.jmlr.org/papers/volume12/duchi11a/duchi11a.pdf)."
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/optimizers/adam.py",
+            "line": 14,
+            "cwe": "CWE-319",
+            "snippet": "[Kingma et al., 2014](http://arxiv.org/abs/1412.6980),"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/optimizers/adamax.py",
+            "line": 50,
+            "cwe": "CWE-319",
+            "snippet": "- [Kingma et al., 2014](http://arxiv.org/abs/1412.6980)"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/optimizers/adamw.py",
+            "line": 17,
+            "cwe": "CWE-319",
+            "snippet": "[Kingma et al., 2014](http://arxiv.org/abs/1412.6980),"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/optimizers/lion.py",
+            "line": 38,
+            "cwe": "CWE-319",
+            "snippet": "- [Chen et al., 2023](http://arxiv.org/abs/2302.06675)"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/optimizers/nadam.py",
+            "line": 35,
+            "cwe": "CWE-319",
+            "snippet": "- [Dozat, 2015](http://cs229.stanford.edu/proj2015/054_report.pdf)."
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/optimizers/rmsprop.py",
+            "line": 50,
+            "cwe": "CWE-319",
+            "snippet": "http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf)"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/legacy/preprocessing/sequence.py",
+            "line": 252,
+            "cwe": "CWE-319",
+            "snippet": "Vector Space](http://arxiv.org/pdf/1301.3781v3.pdf)"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/layers/rnn/conv_lstm.py",
+            "line": 442,
+            "cwe": "CWE-319",
+            "snippet": "http://www.jmlr.org/proceedings/papers/v37/jozefowicz15.pdf)"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/layers/rnn/conv_lstm1d.py",
+            "line": 46,
+            "cwe": "CWE-319",
+            "snippet": "http://www.jmlr.org/proceedings/papers/v37/jozefowicz15.pdf)"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/layers/rnn/conv_lstm2d.py",
+            "line": 46,
+            "cwe": "CWE-319",
+            "snippet": "http://www.jmlr.org/proceedings/papers/v37/jozefowicz15.pdf)"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/layers/rnn/conv_lstm3d.py",
+            "line": 46,
+            "cwe": "CWE-319",
+            "snippet": "http://www.jmlr.org/proceedings/papers/v37/jozefowicz15.pdf)"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/layers/preprocessing/mel_spectrogram.py",
+            "line": 220,
+            "cwe": "CWE-319",
+            "snippet": "http://htk.eng.cam.ac.uk/) convention, defining the mel scale in"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/initializers/random_initializers.py",
+            "line": 367,
+            "cwe": "CWE-319",
+            "snippet": "- [Glorot et al., 2010](http://proceedings.mlr.press/v9/glorot10a.html)"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/datasets/boston_housing.py",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "[StatLib website](http://lib.stat.cmu.edu/datasets/boston)."
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/datasets/mnist.py",
+            "line": 16,
+            "cwe": "CWE-319",
+            "snippet": "[MNIST homepage](http://yann.lecun.com/exdb/mnist/)."
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/callbacks/remote_monitor.py",
+            "line": 40,
+            "cwe": "CWE-319",
+            "snippet": "root=\"http://localhost:9000\","
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/backend/common/backend_utils.py",
+            "line": 463,
+            "cwe": "CWE-319",
+            "snippet": "# See http://docs.scipy.org/doc/numpy/reference/c-api.generalized-ufuncs.html"
+          },
+          {
+            "severity": "low",
+            "file": "keras/src/applications/inception_v3.py",
+            "line": 39,
+            "cwe": "CWE-319",
+            "snippet": "http://arxiv.org/abs/1512.00567) (CVPR 2016)"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 0,
+    "files_with_findings": 0,
+    "severity": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:4ef20dad-9721-52e5-b820-b93c23e383c4",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T05:51:55Z",
+      "component": {
+        "type": "application",
+        "name": "DEEP_LEARNING_FOR",
+        "version": "83b357604d34",
+        "bom-ref": "pkg:generic/anticloud/DEEP_LEARNING_FOR@83b357604d34",
+        "purl": "pkg:generic/anticloud/DEEP_LEARNING_FOR@83b357604d34",
+        "licenses": [
+          {
+            "license": {
+              "id": "Apache-2.0"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": ""
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/the-anticloud/OPENMRS_CORE.git"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "absl-py",
+        "version": "unspecified",
+        "purl": "pkg:pypi/absl-py",
+        "bom-ref": "pypi/absl-py@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "numpy",
+        "version": "unspecified",
+        "purl": "pkg:pypi/numpy",
+        "bom-ref": "pypi/numpy@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "rich",
+        "version": "unspecified",
+        "purl": "pkg:pypi/rich",
+        "bom-ref": "pypi/rich@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "namex",
+        "version": "unspecified",
+        "purl": "pkg:pypi/namex",
+        "bom-ref": "pypi/namex@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "h5py",
+        "version": "unspecified",
+        "purl": "pkg:pypi/h5py",
+        "bom-ref": "pypi/h5py@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "optree",
+        "version": "unspecified",
+        "purl": "pkg:pypi/optree",
+        "bom-ref": "pypi/optree@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "ml-dtypes",
+        "version": "unspecified",
+        "purl": "pkg:pypi/ml-dtypes",
+        "bom-ref": "pypi/ml-dtypes@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "packaging",
+        "version": "unspecified",
+        "purl": "pkg:pypi/packaging",
+        "bom-ref": "pypi/packaging@unspecified"
+      }
+    ]
+  },
+  "elapsed_seconds": 58.4
+}
